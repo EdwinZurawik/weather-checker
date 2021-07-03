@@ -26,6 +26,14 @@ def kelvin_to_celsius(k_degrees: Union[int, float]) -> int:
     return celsius
 
 
-def timestamp_to_time(timestamp):
-    time = datetime.datetime.fromtimestamp(timestamp).strftime("%H:%M")
+def timestamp_to_time(timestamp: int) -> str:
+    """Converts timestamp to time in format %H:%M
+
+    :param timestamp: timestamp to be converted
+    :type timestamp: int
+
+    :return: time in format %H:%M
+    :rtype: str
+    """
+    time = datetime.datetime.fromtimestamp(float(timestamp)).strftime("%H:%M")
     return time
