@@ -1,4 +1,3 @@
-import math
 import datetime
 from typing import Union
 
@@ -12,7 +11,7 @@ def kelvin_to_celsius(k_degrees: Union[int, float]) -> int:
     :return: temperature converted to celsius without the fractional part
     :rtype: int
     """
-    MIN_TEMP_KELVIN=0
+    MIN_TEMP_KELVIN = 0
     K_C_RATIO = 273.15
 
     if not isinstance(k_degrees, (int, float)):
@@ -30,6 +29,3 @@ def kelvin_to_celsius(k_degrees: Union[int, float]) -> int:
 def timestamp_to_time(timestamp):
     time = datetime.datetime.fromtimestamp(timestamp).strftime("%H:%M")
     return time
-
-
-

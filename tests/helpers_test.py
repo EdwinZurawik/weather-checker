@@ -34,7 +34,7 @@ def test_kelvin_to_celsius_incorrect_argument_type():
     assert str(e.value) == \
         "Incorrect argument type of k_degrees. " \
         "Expected <class 'int'> or <class 'float'>, " \
-        "got <class 'str'> instead!" 
+        "got <class 'str'> instead!"
 
 
 def test_kelvin_to_celsius_kelvin_below_zero():
