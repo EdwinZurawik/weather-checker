@@ -3,6 +3,7 @@ import pytest
 from src import helpers as h
 
 
+# kelvin_to_celsius() tests
 def test_kelvin_to_celsius_zero_kelvin():
     expected_temperature = -273
 
@@ -43,3 +44,19 @@ def test_kelvin_to_celsius_kelvin_below_zero():
 
     assert str(e.value) == \
         "Incorrect value of k_degrees. k_degrees cannot be lower than 0!"
+
+
+# timestamp_to_time() tests
+def test_timestamp_to_time_correct():
+    expected_time = "21:55"
+
+    converted_time = h.timestamp_to_time(1625342136)
+
+    assert converted_time == expected_time
+
+
+def test_timestamp_to_time_incorrect_argument_type():
+    with pytest.raises(ValueError) as e:
+        h.timestamp_to_time("incorrect type")
+    assert str(e.value) == "Incorrect argument type of timestamp. " \
+        f"Expected {int}, got {str} instead!"

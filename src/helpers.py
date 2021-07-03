@@ -35,5 +35,8 @@ def timestamp_to_time(timestamp: int) -> str:
     :return: time in format %H:%M
     :rtype: str
     """
+    if not isinstance(timestamp, int):
+        raise ValueError("Incorrect argument type of timestamp. "
+                         f"Expected {int}, got {type(timestamp)} instead!")
     time = datetime.datetime.fromtimestamp(float(timestamp)).strftime("%H:%M")
     return time
